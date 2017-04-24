@@ -1,6 +1,6 @@
 {
 	"id": "nodebb-plugin-sso-oauth-ifpe",
-	"name": "NodeBB OAuth SSO",
+	"name": "NodeBB IFPE OAuth SSO",
 	"description": "NodeBB Plugin that allows users to login/register via IFPE OAuth provider.",
 	"url": "https://github.com/fmca/nodebb-plugin-sso-oauth",
 	"library": "./library.js",
