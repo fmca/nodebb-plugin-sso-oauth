@@ -1,5 +1,5 @@
 {
-  "name": "nodebb-plugin-sso-oauth",
+  "name": "nodebb-plugin-sso-oauth-ifpe",
   "version": "0.3.2",
   "description": "NodeBB Generic OAuth SSO",
   "main": "library.js",
@@ -18,8 +18,8 @@
     "registration"
   ],
   "author": {
-    "name": "Julian Lam",
-    "email": "julian@nodebb.org"
+    "name": "Filipe",
+    "email": ""
   },
   "license": "MIT",
   "bugs": {
