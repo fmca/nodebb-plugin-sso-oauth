@@ -30,8 +30,8 @@
 	var authenticationController = module.parent.require('./controllers/authentication');
 
 	var constants = Object.freeze({
-			type: '',	// Either 'oauth' or 'oauth2'
-			name: '',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
+			type: 'oauth2',	// Either 'oauth' or 'oauth2'
+			name: 'nodebb',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
 			oauth: {
 				requestTokenURL: '',
 				accessTokenURL: '',
@@ -40,12 +40,12 @@
 				consumerSecret: ''
 			},
 			oauth2: {
-				authorizationURL: '',
-				tokenURL: '',
-				clientID: '',
+				authorizationURL: 'https://acesso.ifpe.edu.br/auth/realms/master/protocol/openid-connect/auth',
+				tokenURL: 'https://acesso.ifpe.edu.br/auth/realms/master/protocol/openid-connect/token',
+				clientID: 'nodebb',
 				clientSecret: ''
 			},
-			userRoute: ''	// This is the address to your app's "user profile" API endpoint (expects JSON)
+			userRoute: 'https://acesso.ifpe.edu.br/auth/realms/master/protocol/openid-connect/userinfo'	// This is the address to your app's "user profile" API endpoint (expects JSON)
 		}),
 		configOk = false,
 		OAuth = {}, passportOAuth, opts;
@@ -151,7 +151,7 @@
 		// console.log(data);
 
 		var profile = {};
-		profile.id = data.id;
+		profile.id = data.sub;
 		profile.displayName = data.name;
 		profile.emails = [{ value: data.email }];
 
